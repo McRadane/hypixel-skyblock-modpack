@@ -1,0 +1,24 @@
+{
+    "formatVersion": 1,
+    "game": "minecraft",
+    "versionId": "1.0.0",
+    "name": "Hypixel Skyblock",
+    "summary": "Collection of mods for Hypixel Skyblock",
+    "files": [
+        {
+            "path": "mods/NotEnoughUpdates-2.1.ja",
+            "hashes": {
+                "sha1": "97b506bc19762ef59e4891571ab6c966c9baa548",
+                "sha512": "a48cb81d2a7285c4ae77530adddb8f2e04679adc7fd0948e364b4a203a15176e66c3fd669ed06426990ea312d2540493de6ff1e220f595bdd185037f23f2514b"
+            },
+            "downloads": [
+                "https://github.com/Moulberry/NotEnoughUpdates/releases/download/2.1.0/NotEnoughUpdates-2.1.jar"
+            ],
+            "fileSize": 18395465
+        },
+    ],
+    "dependencies": {
+        "minecraft": "1.8.9",
+        "forge-loader": "11.15.1.2318"
+    }
+}
