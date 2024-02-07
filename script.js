@@ -195,8 +195,8 @@ const updateManifests = async () => {
     fs.unlinkSync(path.resolve(__dirname, "temp", "release.version"));
   }
 
-  let releaseManifestsUpdated = false;
-  let prereleaseManifestsUpdated = false;
+  let releaseManifestsChangelog = [];
+  let prereleaseManifestsChangelog = [];
 
   for await (const dependencyMod of dependenciesMods) {
     const { latestPrerelease, latestRelease } = await getMetadataGithub(
@@ -217,7 +217,9 @@ const updateManifests = async () => {
 
     if (resultPrerelease) {
       prereleaseManifests.files[indexPrereleaseManifest] = resultPrerelease;
-      prereleaseManifestsUpdated = true;
+      releaseManifestsChangelog.push(
+        `Updating ${resultPrerelease.path.replace("mods/", "")}`
+      );
     }
 
     // Release
@@ -234,7 +236,9 @@ const updateManifests = async () => {
 
     if (resultRelease) {
       releaseManifests.files[indexReleaseManifest] = resultRelease;
-      releaseManifestsUpdated = true;
+      prereleaseManifestsChangelog.push(
+        `Updating ${resultRelease.path.replace("mods/", "")}`
+      );
     }
   }
 
@@ -243,11 +247,11 @@ const updateManifests = async () => {
     date.getMonth() + 1
   }.${date.getDate()}`;
 
-  if (prereleaseManifestsUpdated) {
+  if (prereleaseManifestsChangelog.length > 0) {
     prereleaseManifests.versionId = `prerelease-${dateStr}`;
     fs.writeFileSync(
       path.resolve(__dirname, "temp", "prerelease.version"),
-      prereleaseManifests.versionId
+      prereleaseManifestsChangelog.join("\n")
     );
     fs.writeFileSync(
       path.resolve(__dirname, "manifests", "prerelease.json"),
@@ -255,11 +259,11 @@ const updateManifests = async () => {
     );
   }
 
-  if (releaseManifestsUpdated) {
+  if (releaseManifestsChangelog.length > 0) {
     releaseManifests.versionId = dateStr;
     fs.writeFileSync(
       path.resolve(__dirname, "temp", "release.version"),
-      releaseManifests.versionId
+      releaseManifestsChangelog.join("\n")
     );
     fs.writeFileSync(
       path.resolve(__dirname, "manifests", "release.json"),
@@ -294,7 +298,7 @@ const createRelease = async () => {
 
   for await (const file of files) {
     if (file.endsWith(".version")) {
-      const versionId = fs.readFileSync(
+      const changelog = fs.readFileSync(
         path.resolve(__dirname, "temp", file),
         "utf-8"
       );
@@ -310,6 +314,8 @@ const createRelease = async () => {
         )
       );
 
+      const { versionId } = manifest;
+
       console.log("Preparing package...");
       await createPackage(file.replace(".version", ""), versionId);
       const packageName = `HypixelSkyblock-${versionId}.mrpack`;
@@ -321,6 +327,7 @@ const createRelease = async () => {
       form.append("data", {
         name: `Hypixel Skyblock Modpack ${versionId}`,
         version_number: versionId,
+        changelog,
         dependencies: manifest.files.map((file) => ({
           file_name: file.path.replace("mods/", ""),
           dependency_type: "embedded",
