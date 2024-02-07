@@ -1,0 +1,68 @@
+{
+  "formatVersion": 1,
+  "game": "minecraft",
+  "versionId": "2024.2.7",
+  "name": "Hypixel Skyblock",
+  "summary": "Collection of mods for Hypixel Skyblock",
+  "files": [
+    {
+      "path": "mods/NotEnoughUpdates-2.1.jar",
+      "hashes": {
+        "sha1": "97b506bc19762ef59e4891571ab6c966c9baa548",
+        "sha512": "a48cb81d2a7285c4ae77530adddb8f2e04679adc7fd0948e364b4a203a15176e66c3fd669ed06426990ea312d2540493de6ff1e220f595bdd185037f23f2514b"
+      },
+      "downloads": [
+        "https://github.com/Moulberry/NotEnoughUpdates/releases/download/2.1.0/NotEnoughUpdates-2.1.jar"
+      ],
+      "fileSize": 18395465
+    },
+    {
+      "path": "mods/Skytils-1.8.1.jar",
+      "downloads": [
+        "https://github.com/Skytils/SkytilsMod/releases/download/v1.8.1/Skytils-1.8.1.jar"
+      ],
+      "fileSize": 20586927,
+      "hashes": {
+        "sha1": "5ce994bc4a3863cdcbec40f205b332550cdb9092",
+        "sha512": "c42b413c50ba2377bc1f72b0fae7981da5f1203b7cbd7356e9fc878605a8e29187165b3ed822de4daa1453dff04b9c9159362c84935428fbda1b00d819284ad2"
+      }
+    },
+    {
+      "path": "mods/SkyHanni-0.22.jar",
+      "downloads": [
+        "https://github.com/hannibal002/SkyHanni/releases/download/0.22/SkyHanni-0.22.jar"
+      ],
+      "fileSize": 14519229,
+      "hashes": {
+        "sha1": "99cd160c30a70b1a011da032a614443e9bcc0530",
+        "sha512": "4c340a59d56b161087ff236089859960e5a6f2700692d9d6f69d2cf066840a2ce457e6843a383dc805172e03d753e3d27495d2b86a3fcf00cbe86f931ff1025b"
+      }
+    },
+    {
+      "path": "mods/SkyblockAddons-1.7.3+7380-for-MC-1.8.9.jar",
+      "downloads": [
+        "https://github.com/BiscuitDevelopment/SkyblockAddons/releases/download/v1.7.3/SkyblockAddons-1.7.3+7380-for-MC-1.8.9.jar"
+      ],
+      "fileSize": 4065225,
+      "hashes": {
+        "sha1": "260e1bb658ced5982f562f47882e7db5533e1887",
+        "sha512": "1e54d4769fbbc7f953dbebe4c17cb08cb3f4e57a70af093a0f4cef5b8cf2ccdf9f2c6a6d4826fde7622c5e30cae7742ccfa9e99fdcb5c185d2cd506510ffcd69"
+      }
+    },
+    {
+      "path": "mods/Dungeon_Rooms-3.4.0.jar",
+      "downloads": [
+        "https://github.com/Quantizr/DungeonRoomsMod/releases/download/v3.4.0/Dungeon_Rooms-3.4.0.jar"
+      ],
+      "fileSize": 7508127,
+      "hashes": {
+        "sha1": "521f5056c53a3c71c3d14c0c26dec7e55f7b3fcd",
+        "sha512": "25b7a44692bc08de183562e3f558f46beffa8166cebfb1a797905dc009d0fa136af229e3f8a5b2776c4ae12555dddd8eb12ff227a799030504c77957b467a4b6"
+      }
+    }
+  ],
+  "dependencies": {
+    "minecraft": "1.8.9",
+    "forge": "11.15.1.2318"
+  }
+}

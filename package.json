@@ -1,0 +1,24 @@
+{
+  "name": "hypixel-skyblock-modpack",
+  "version": "1.0.0",
+  "description": "Hypixel Skyblock Modpack generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/McRadane/hypixel-skyblock-modpack.git"
+  },
+  "author": "Léo Maradan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/McRadane/hypixel-skyblock-modpack/issues"
+  },
+  "homepage": "https://github.com/McRadane/hypixel-skyblock-modpack#readme",
+  "dependencies": {
+    "archiver": "^6.0.1",
+    "axios": "^1.6.7",
+    "formdata-node": "^6.0.3"
+  }
+}
