@@ -4,7 +4,8 @@
   "description": "Hypixel Skyblock Modpack generator",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "update": "node script.js update",
+    "publish": "node script.js create-release"
   },
   "repository": {
     "type": "git",
